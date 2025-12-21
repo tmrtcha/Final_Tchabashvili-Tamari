@@ -276,13 +276,6 @@ body {
   position: relative;
 }
 
-.fill {
-  height: 100%;
-  background: orange;
-  border-radius: 10px;
-  position: relative;
-}
-
 .fill::after {
   content: "";
   position: absolute;
@@ -294,17 +287,35 @@ body {
   border-radius: 50%;
 }
 
-/* პროგრესები */
-.ux {
+.bar {
+  width: 100%;
+  height: 8px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.fill {
+  height: 100%;
+  width: 0; /* დაწყების პროცენტი 0 */
+  background: orange;
+  border-radius: 10px;
+  position: relative;
+  transition: width 2s ease-in-out;
+}
+
+/* საბოლოო პროცენტი */
+.fill.ux {
   width: 80%;
 }
-.web {
+.fill.web {
   width: 90%;
 }
-.app {
+.fill.app {
   width: 85%;
 }
-.graphic {
+.fill.graphic {
   width: 75%;
 }
 

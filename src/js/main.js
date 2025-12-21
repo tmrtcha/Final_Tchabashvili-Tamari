@@ -28,13 +28,37 @@ function startAutoSlide() {
   }, 5000);
 }
 
-// // ავტომატური სლაიდის გაჩერება
-// function stopAutoSlide() {
-//   clearInterval(autoSlideInterval);
-// }
-
-// // მაუსის შეყვანა/გამოყვანა
-// sliderWrapper.addEventListener("mouseenter", stopAutoSlide);
-// sliderWrapper.addEventListener("mouseleave", startAutoSlide);
-
+// დაწყება
 startAutoSlide();
+
+// ვიპოვო ყველა fill ელემენტი
+const fills = document.querySelectorAll(".fill");
+const aboutSection = document.getElementById("about");
+
+// თავდაპირველად ყველა fill-ის width 0
+fills.forEach((fill) => (fill.style.width = "0"));
+
+function animateSkills() {
+  const sectionTop = aboutSection.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (sectionTop < screenHeight - 100) {
+    // როცა სექცია 100px რჩება ეკრანამდე
+    fills.forEach((fill) => {
+      fill.style.width = fill.classList.contains("ux")
+        ? "80%"
+        : fill.classList.contains("web")
+        ? "90%"
+        : fill.classList.contains("app")
+        ? "85%"
+        : fill.classList.contains("graphic")
+        ? "75%"
+        : "0";
+    });
+    // ერთხელაც რომ არ განმეორდეს
+    window.removeEventListener("scroll", animateSkills);
+  }
+}
+
+// scroll listener
+window.addEventListener("scroll", animateSkills);
