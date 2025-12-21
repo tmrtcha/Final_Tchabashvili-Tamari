@@ -13,16 +13,38 @@
     <script defer src="src/js/main.js"></script>
   </head>
   <body>
-    <header class="navbar">
-      <div class="logo">Tamari Tchabashvili</div>
-      <nav>
-        <a href="#home">Home</a>
+    <header class="navigation-navbar">
+      <div class="logo">TAMARI TCHABASHVILI</div>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="#" class="active">Home</a>
+          </li>
+          <li>
+            <a href="#about">About Me</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <button class="btn">Download CV</button>
+
+        <!-- <a href="#home">Home</a>
         <a href="#about">About Me</a>
         <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
-        <button class="btn">Download CV</button>
+        <button class="btn">Download CV</button> -->
       </nav>
     </header>
 
@@ -39,13 +61,37 @@
         <button class="btn">Hire Me</button>
       </div>
       <div class="hero-img">
-        <img src="src/images/profile2.jpeg" alt="profile" />
-             <div class="socials">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <!-- SLIDER -->
+        <section class="slider-section">
+          <div class="slider-wrapper">
+            <div class="slides">
+              <div class="slide active">
+                <img src="src/images/profile2.jpeg" alt="profile" />
+              </div>
+
+              <div class="slide">
+                <img src="src/images/profile3.jpeg" alt="profile" />
+              </div>
+
+              <div class="slide">
+                <img src="src/images/profile4.jpeg" alt="profile" />
+              </div>
             </div>
+
+            <!-- <div class="slider-nav">
+              <button class="prev">&#10094;</button>
+              <button class="next">&#10095;</button>
+            </div> -->
+          </div>
+        </section>
+
+        <!-- <img src="src/images/profile2.jpeg" alt="profile" /> -->
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
       </div>
     </section>
 
@@ -104,10 +150,10 @@
           </svg>
 
           <h1>UI/UX</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                euismod, nunc ut.
-            </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            euismod, nunc ut.
+          </p>
         </div>
         <div class="card">
           <svg
@@ -196,7 +242,7 @@
           </svg>
 
           <h1>App Design</h1>
-          <p></p>
+          <p>
             Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
             interdum
           </p>
@@ -251,9 +297,10 @@
           </svg>
 
           <h1>Graphic Design</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                euismod, nunc ut.
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            euismod, nunc ut.
+          </p>
         </div>
       </div>
     </section>
@@ -269,9 +316,23 @@
 
     <section class="testimonials" id="testimonials">
       <h2>Testimonials</h2>
-      <div class="testimonial">
-        <p>"Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices."</p>
-        <span>— CEO</span>
+      <p>
+        Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+        lectus netus in. Aliquet donec morbi convallis pretium
+      </p>
+      <div class="card testimonial">
+        <img src="src/images/profile3.jpeg" alt="Avatar" />
+
+        <div class="testimonal-content">
+          <p>
+            "Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+            accumsan. Id leo urna velit neque mattis id tellus arcu condimentum.
+            Augue dictum dolor elementum convallis dignissim malesuada commodo
+            ultrices."
+          </p>
+          <h5>Name</h5>
+          <span>CEO</span>
+        </div>
       </div>
     </section>
 
