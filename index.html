@@ -305,12 +305,45 @@
       </div>
     </section>
 
-    <section class="projects" id="projects">
+    <!-- <section class="projects" id="projects">
       <h2>My Projects</h2>
       <div class="project-grid">
         <div class="project">Landing Page</div>
         <div class="project">Business Website</div>
         <div class="project">E-commerce</div>
+      </div>
+    </section> -->
+
+    <section class="projects" id="projects">
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-subtitle">
+        Some of my recent works. Click on categories to filter projects.
+      </p>
+
+      <!-- Filters -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="uiux">UI/UX</button>
+        <button class="filter-btn" data-filter="web">Web Design</button>
+        <button class="filter-btn" data-filter="app">App Design</button>
+      </div>
+
+      <!-- Projects -->
+      <div class="project-grid">
+        <div class="project" data-category="uiux">
+          <h3>UI/UX Dashboard</h3>
+          <span>UI/UX Design</span>
+        </div>
+
+        <div class="project" data-category="web">
+          <h3>Landing Page</h3>
+          <span>Web Design</span>
+        </div>
+
+        <div class="project" data-category="app">
+          <h3>Mobile App</h3>
+          <span>App Design</span>
+        </div>
       </div>
     </section>
 
