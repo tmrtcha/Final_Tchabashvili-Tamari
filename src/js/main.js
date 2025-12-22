@@ -83,3 +83,56 @@ filterBtns.forEach((btn) => {
     });
   });
 });
+
+// TESTIMONIALS SLIDER
+const testimonialData = [
+  {
+    img: "src/images/profile3.jpeg",
+    text: "Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis.",
+    name: "John Doe",
+    role: "CEO",
+  },
+  {
+    img: "src/images/profile2.jpeg",
+    text: "Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices.",
+    name: "Sarah Smith",
+    role: "Marketing Manager",
+  },
+  {
+    img: "src/images/profile3.jpeg",
+    text: "Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium.",
+    name: "David Brown",
+    role: "Product Designer",
+  },
+  {
+    img: "src/images/profile4.jpeg",
+    text: "In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum.",
+    name: "Emily Wilson",
+    role: "UI/UX Designer",
+  },
+];
+
+const imgEl = document.getElementById("t-img");
+const textEl = document.getElementById("t-text");
+const nameEl = document.getElementById("t-name");
+const roleEl = document.getElementById("t-role");
+const dots = document.querySelectorAll(".dot");
+
+function showTestimonial(index) {
+  imgEl.src = testimonialData[index].img;
+  textEl.textContent = `"${testimonialData[index].text}"`;
+  nameEl.textContent = testimonialData[index].name;
+  roleEl.textContent = testimonialData[index].role;
+
+  dots.forEach((dot) => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+dots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    showTestimonial(dot.dataset.index);
+  });
+});
+
+// default slide
+showTestimonial(0);

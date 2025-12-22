@@ -398,6 +398,16 @@ body {
   transition: 0.4s ease;
   opacity: 1;
   transform: scale(1);
+  background: none;
+}
+.project h3 {
+  color: white;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
 .project h3 {
@@ -413,4 +423,36 @@ body {
 .project:hover {
   transform: translateY(-10px) scale(1.03);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-dots {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 6px;
+  background: #ccc;
+  border-radius: 10px;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.dot.active {
+  width: 28px;
+  background: orange;
+}
+.dot:hover {
+  background: orange;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+}
+footer p {
+  color: #bbb;
 }
