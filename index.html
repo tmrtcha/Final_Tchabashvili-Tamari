@@ -383,16 +383,43 @@
 
     <section class="contact" id="contact">
       <h2>Contact Us</h2>
-      <form>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your Email" />
-        <input type="text" placeholder="Your Website" />
-        <textarea placeholder="Your Message"></textarea>
-        <button class="btn">Contact Me</button>
+
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <input type="text" id="website" placeholder="Your Website" />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button class="btn" type="submit">Contact Me</button>
       </form>
     </section>
 
+    <!-- MODAL -->
+    <div class="modal" id="success-modal">
+      <div class="modal-content">
+        <p>Thank you for getting in touch! We appreciate you contacting us.</p>
+        <button id="close-modal">Close</button>
+      </div>
+    </div>
+
     <footer>
+      <footer class="footer">
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">t</a>
+          <a href="#" aria-label="Instagram">i</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </footer>
+
       <p>© 2023 All Rights Reserved</p>
     </footer>
   </body>

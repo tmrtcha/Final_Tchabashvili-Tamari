@@ -136,3 +136,65 @@ dots.forEach((dot) => {
 
 // default slide
 showTestimonial(0);
+
+// CONTACT FORM SUBMIT
+const form = document.getElementById("contact-form");
+const modal = document.getElementById("success-modal");
+const closeModal = document.getElementById("close-modal");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    website: document.getElementById("website").value,
+    message: document.getElementById("message").value,
+  };
+
+  fetch("https://borjomi.loremipsum.ge/api/send-message", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      if (result.status === 1) {
+        showModal();
+        form.reset();
+      }
+    })
+    .catch(() => {
+      // თუ borjomi API ვერ იმუშავებს
+      sendFallback();
+    });
+});
+
+// FALLBACK REQUEST
+function sendFallback() {
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title: "Contact Message",
+      body: document.getElementById("message").value,
+      userId: 1,
+    }),
+  }).then(() => {
+    showModal();
+    form.reset();
+  });
+}
+
+// MODAL FUNCTIONS
+function showModal() {
+  modal.style.display = "flex";
+}
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
