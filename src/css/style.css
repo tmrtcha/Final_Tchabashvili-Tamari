@@ -28,7 +28,7 @@ body {
 .navigation-navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
+  padding: 20px 10px;
   background: #111;
   align-items: center;
 }
@@ -137,12 +137,6 @@ section {
   text-align: left;
 }
 
-/* .bar {
-  background: #333;
-  height: 8px;
-  border-radius: 10px;
-} */
-
 .bar div {
   height: 100%;
   background: orange;
@@ -213,22 +207,6 @@ textarea {
   border: none;
 }
 
-/* footer {
-  text-align: center;
-  background: #000;
-} */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-} */
-
-/* body {
-  background: #111;
-  color: #fff;
-} */
-
 .about {
   display: flex;
   gap: 60px;
@@ -262,23 +240,11 @@ textarea {
   line-height: 1.6;
 }
 
-.skill {
-  margin-bottom: 20px;
-}
-
 .skill span {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
 }
-
-/* .bar {
-  width: 100%;
-  height: 6px;
-  background: #333;
-  border-radius: 10px;
-  position: relative;
-} */
 
 .fill::after {
   content: "";
@@ -504,7 +470,6 @@ footer p {
 /* TEXTAREA FULL WIDTH */
 #contact-form textarea {
   grid-column: 1 / -1;
-  /* min-height: 140px; */
   resize: none;
 }
 
@@ -519,13 +484,6 @@ footer p {
   border: none;
   font-size: 16px;
   cursor: pointer;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  #contact-form {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ================= MODAL ================= */
@@ -612,10 +570,6 @@ footer p {
     display: flex;
   }
 
-  .navbar.active {
-    display: flex;
-  }
-
   .navbar ul {
     flex-direction: column;
     gap: 15px;
@@ -625,17 +579,15 @@ footer p {
   .navbar .btn {
     margin: 20px;
   }
-}
+  #contact-form {
+    grid-template-columns: 1fr;
+  }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
   .footer-nav {
     flex-wrap: wrap;
     gap: 15px;
   }
-}
 
-@media (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
@@ -799,10 +751,8 @@ footer p {
   .footer-social {
     margin-top: 20px;
   }
-}
 
-/* ================= MOBILE TESTIMONIAL FIX ================= */
-@media (max-width: 768px) {
+  /* ================= MOBILE TESTIMONIAL FIX ================= */
   .testimonials {
     text-align: left;
   }
@@ -812,13 +762,6 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: 4px;
-  }
-
-  #t-text::before,
-  #t-text::after {
-    font-size: 30px;
-    color: orange;
-    position: absolute;
   }
 
   #t-text::before {
@@ -832,9 +775,8 @@ footer p {
     right: 6px;
     bottom: -18px;
   }
-}
-/* ================= MOBILE TESTIMONIAL FIX ================= */
-@media (max-width: 768px) {
+
+  /* ================= MOBILE TESTIMONIAL FIX ================= */
   .card.testimonial {
     background: #fff;
     padding: 24px;
@@ -854,12 +796,6 @@ footer p {
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
-  }
-
-  /* კონტენტი ფოტოს გვერდით */
-  .testimonal-content {
-    display: flex;
-    flex-direction: column;
   }
 
   /* სახელი */
@@ -908,8 +844,7 @@ footer p {
     right: 6px;
     bottom: -18px;
   }
-}
-@media (max-width: 768px) {
+
   .navbar {
     position: fixed;
     inset: 0;
@@ -944,8 +879,12 @@ footer p {
     font-size: 22px;
   }
 
+  .logo {
+    padding-right: 10%;
+  }
   /* დახურვის ღილაკი */
   .close-menu {
+    display: block;
     position: absolute;
     top: 25px;
     right: 30px;
