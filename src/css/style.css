@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -19,6 +19,10 @@ li {
 body {
   background: #111;
   color: #fff;
+}
+
+.close-menu {
+  display: none;
 }
 
 .navigation-navbar {
@@ -84,10 +88,6 @@ body {
   margin-bottom: 20px;
 }
 
-.profile img {
-  display: none;
-}
-
 /* SLIDER */
 
 .slider-wrapper {
@@ -137,11 +137,11 @@ section {
   text-align: left;
 }
 
-.bar {
+/* .bar {
   background: #333;
   height: 8px;
   border-radius: 10px;
-}
+} */
 
 .bar div {
   height: 100%;
@@ -213,21 +213,21 @@ textarea {
   border: none;
 }
 
-footer {
+/* footer {
   text-align: center;
   background: #000;
-}
-* {
+} */
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-}
+} */
 
-body {
+/* body {
   background: #111;
   color: #fff;
-}
+} */
 
 .about {
   display: flex;
@@ -272,13 +272,13 @@ body {
   font-weight: bold;
 }
 
-.bar {
+/* .bar {
   width: 100%;
   height: 6px;
   background: #333;
   border-radius: 10px;
   position: relative;
-}
+} */
 
 .fill::after {
   content: "";
@@ -297,6 +297,7 @@ body {
   background: #333;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
   margin-bottom: 20px;
 }
 
@@ -350,7 +351,6 @@ body {
 
 .projects {
   color: #fff;
-  padding: 80px 10%;
   text-align: center;
 }
 
@@ -397,7 +397,6 @@ body {
 
 .project {
   border-radius: 18px;
-  padding: 40px 30px;
   transition: 0.4s ease;
   opacity: 1;
   transform: scale(1);
@@ -464,12 +463,18 @@ footer p {
   background: #111;
   color: #fff;
   padding: 80px 10%;
-  text-align: center;
+  text-align: left;
 }
 
 .contact h2 {
   font-size: 42px;
   margin-bottom: 40px;
+}
+
+.contact p {
+  color: #bbb;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 /* FORM */
@@ -582,32 +587,6 @@ footer p {
   color: orange;
 }
 
-/* SOCIAL LINKS */
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.footer-social a {
-  width: 38px;
-  height: 38px;
-  background: white;
-  color: black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.footer-social a:hover {
-  background: orange;
-  color: #000;
-}
-
 .copyright {
   background-color: black;
   padding: 20px;
@@ -631,16 +610,6 @@ footer p {
 @media (max-width: 768px) {
   .burger {
     display: flex;
-  }
-
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #111;
-    flex-direction: column;
-    display: none;
   }
 
   .navbar.active {
@@ -731,6 +700,8 @@ footer p {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
   }
 
   .slider-section {
@@ -769,6 +740,11 @@ footer p {
     padding: 25px;
   }
 
+  .services,
+  .projects {
+    text-align: left;
+  }
+
   /* ================= PROJECTS ================= */
 
   .filters {
@@ -785,8 +761,12 @@ footer p {
 
   .testimonial {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     gap: 20px;
+  }
+
+  .testimonials {
+    text-align: left;
   }
 
   .testimonial img {
@@ -818,5 +798,172 @@ footer p {
 
   .footer-social {
     margin-top: 20px;
+  }
+}
+
+/* ================= MOBILE TESTIMONIAL FIX ================= */
+@media (max-width: 768px) {
+  .testimonials {
+    text-align: left;
+  }
+
+  /* ტექსტის ბლოკი */
+  .testimonal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #t-text::before,
+  #t-text::after {
+    font-size: 30px;
+    color: orange;
+    position: absolute;
+  }
+
+  #t-text::before {
+    content: "“";
+    left: 0;
+    top: -8px;
+  }
+
+  #t-text::after {
+    content: "”";
+    right: 6px;
+    bottom: -18px;
+  }
+}
+/* ================= MOBILE TESTIMONIAL FIX ================= */
+@media (max-width: 768px) {
+  .card.testimonial {
+    background: #fff;
+    padding: 24px;
+    border-radius: 18px;
+    max-width: 360px;
+    margin: 0 auto;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* ფოტო */
+  #t-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  /* კონტენტი ფოტოს გვერდით */
+  .testimonal-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* სახელი */
+  #t-name {
+    order: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+  }
+
+  /* პოზიცია */
+  #t-role {
+    order: 1;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 8px;
+  }
+
+  /* ტექსტი გადავიდეს ქვემოთ */
+  #t-text {
+    order: 2;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    position: relative;
+    padding-left: 18px;
+    margin-top: 10px;
+  }
+
+  #t-text::before,
+  #t-text::after {
+    font-size: 30px;
+    color: orange;
+    position: absolute;
+  }
+
+  #t-text::before {
+    content: "“";
+    left: 0;
+    top: -8px;
+  }
+
+  #t-text::after {
+    content: "”";
+    right: 6px;
+    bottom: -18px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75); /* გამჭვირვალე ფონი */
+    backdrop-filter: blur(8px); /* glass effect */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .navbar a {
+    font-size: 22px;
+  }
+
+  /* დახურვის ღილაკი */
+  .close-menu {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .close-menu:hover {
+    color: orange;
+  }
+
+  .profile img {
+    display: none;
+  }
+
+  .project {
+    padding: 0;
   }
 }

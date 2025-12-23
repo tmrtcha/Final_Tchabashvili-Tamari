@@ -205,3 +205,19 @@ const navbar = document.getElementById("navbar");
 burger.addEventListener("click", () => {
   navbar.classList.toggle("active");
 });
+
+const closeMenu = document.querySelector(".close-menu");
+
+burger.addEventListener("click", () => {
+  navbar.classList.add("active");
+});
+
+closeMenu.addEventListener("click", () => {
+  navbar.classList.remove("active");
+});
+
+document.querySelectorAll(".navbar a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("active");
+  });
+});
